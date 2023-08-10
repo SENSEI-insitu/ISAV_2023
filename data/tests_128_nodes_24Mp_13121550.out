@@ -1,0 +1,547 @@
++ n_bod=24000000
++ n_it=10
++ out_int=0
++ out_dir=sim_out
++ sensei_int=1
++ part_int=1000000
++ n_node=128
++ n_dev=4
+++ bc
+++ echo '4*128'
++ n_dev_tot=512
++ echo '**********************************************************************************'
+**********************************************************************************
++ sensei_xml=data_binning_sync_host.xml
++ rank_per_dev=1
+++ bc
+++ echo '512*1'
++ n=512
+++ echo '4*1'
+++ bc
++ tasks=4
++ sim_dev=4
++ srun -N 128 -G 512 -n 512 --tasks-per-node 4 ./newtonpp_nv_omp --n_bodies 24000000 --n_its 10 --out_int 0 --out_dir sim_out --sensei_xml data_binning_sync_host.xml --sensei_int 1 --part_int 1000000 --num_devs 4
+ === newton++ === : generate 24000000 bodies total
+ === newton++ === : run for 10 iterations
+ === newton++ === : writing results every 0 iterations
+ === newton++ === : writing results at sim_out
+ === newton++ === : in-situ initialized with data_binning_sync_host.xml
+ === newton++ === : in-situ processing every 1 iterations
+ === newton++ === : partition particles every 1000000 iterations
+ === newton++ === : 4 devices in use per node
+ === newton++ === : initialized 24000000 bodies on 512 patches. nfr=4.09207e+13
+ === newton++ === : read ic : 1.46222s
+ === newton++ === : initialized the in-situ backend
+ === newton++ === : sensei init : 0.008285s
+ === newton++ === : build tree : 3.57242s
+ === newton++ === : init forces : 21.6084s
+ === newton++ === : sensei upd : 30.2648s
+ === newton++ === : === initialization === : 57.9833s
+ === newton++ === : integrate part : 21.6246s
+ === newton++ === : sensei upd : 30.2439s
+ === newton++ === : === loop iteration === : 51.8686s
+ === newton++ === : integrate part : 21.6619s
+ === newton++ === : sensei upd : 29.9897s
+ === newton++ === : === loop iteration === : 51.6516s
+ === newton++ === : integrate part : 21.6437s
+ === newton++ === : sensei upd : 30.0197s
+ === newton++ === : === loop iteration === : 51.6634s
+ === newton++ === : integrate part : 21.6181s
+ === newton++ === : sensei upd : 30.1473s
+ === newton++ === : === loop iteration === : 51.7655s
+ === newton++ === : integrate part : 21.6095s
+ === newton++ === : sensei upd : 30.0176s
+ === newton++ === : === loop iteration === : 51.6272s
+ === newton++ === : integrate part : 21.6308s
+ === newton++ === : sensei upd : 30.1984s
+ === newton++ === : === loop iteration === : 51.8293s
+ === newton++ === : integrate part : 21.6486s
+ === newton++ === : sensei upd : 30.1658s
+ === newton++ === : === loop iteration === : 51.8144s
+ === newton++ === : integrate part : 21.6266s
+ === newton++ === : sensei upd : 30.1117s
+ === newton++ === : === loop iteration === : 51.7383s
+ === newton++ === : integrate part : 21.6121s
+ === newton++ === : sensei upd : 30.1864s
+ === newton++ === : === loop iteration === : 51.7986s
+ === newton++ === : integrate part : 21.659s
+ === newton++ === : sensei upd : 30.0403s
+ === newton++ === : === loop iteration === : 51.6994s
+ === newton++ === : fin sensei : 0.000212s
+ === newton++ === : total time : 575.445s
+
+real	9m41.790s
+user	0m0.060s
+sys	0m0.075s
++ echo '**********************************************************************************'
+**********************************************************************************
++ sensei_xml=data_binning_sync_matched.xml
++ rank_per_dev=1
+++ echo '512*1'
+++ bc
++ n=512
+++ echo '4*1'
+++ bc
++ tasks=4
++ sim_dev=4
++ srun -N 128 -G 512 -n 512 --tasks-per-node 4 ./newtonpp_nv_omp --n_bodies 24000000 --n_its 10 --out_int 0 --out_dir sim_out --sensei_xml data_binning_sync_matched.xml --sensei_int 1 --part_int 1000000 --num_devs 4
+srun: Job 13121550 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=13121550.1
+ === newton++ === : generate 24000000 bodies total
+ === newton++ === : run for 10 iterations
+ === newton++ === : writing results every 0 iterations
+ === newton++ === : writing results at sim_out
+ === newton++ === : in-situ initialized with data_binning_sync_matched.xml
+ === newton++ === : in-situ processing every 1 iterations
+ === newton++ === : partition particles every 1000000 iterations
+ === newton++ === : 4 devices in use per node
+ === newton++ === : initialized 24000000 bodies on 512 patches. nfr=4.09207e+13
+ === newton++ === : read ic : 1.48045s
+ === newton++ === : initialized the in-situ backend
+ === newton++ === : sensei init : 0.003575s
+ === newton++ === : build tree : 3.38157s
+ === newton++ === : init forces : 21.6656s
+ === newton++ === : sensei upd : 30.3836s
+ === newton++ === : === initialization === : 57.9419s
+ === newton++ === : integrate part : 21.6897s
+ === newton++ === : sensei upd : 30.3318s
+ === newton++ === : === loop iteration === : 52.0215s
+ === newton++ === : integrate part : 21.6276s
+ === newton++ === : sensei upd : 30.4458s
+ === newton++ === : === loop iteration === : 52.0735s
+ === newton++ === : integrate part : 21.5819s
+ === newton++ === : sensei upd : 30.2288s
+ === newton++ === : === loop iteration === : 51.8107s
+ === newton++ === : integrate part : 21.5881s
+ === newton++ === : sensei upd : 30.4787s
+ === newton++ === : === loop iteration === : 52.0668s
+ === newton++ === : integrate part : 21.6019s
+ === newton++ === : sensei upd : 30.6482s
+ === newton++ === : === loop iteration === : 52.2502s
+ === newton++ === : integrate part : 21.6439s
+ === newton++ === : sensei upd : 30.3143s
+ === newton++ === : === loop iteration === : 51.9582s
+ === newton++ === : integrate part : 21.6278s
+ === newton++ === : sensei upd : 30.0922s
+ === newton++ === : === loop iteration === : 51.7201s
+ === newton++ === : integrate part : 21.6392s
+ === newton++ === : sensei upd : 30.2335s
+ === newton++ === : === loop iteration === : 51.8728s
+ === newton++ === : integrate part : 21.6611s
+ === newton++ === : sensei upd : 30.1994s
+ === newton++ === : === loop iteration === : 51.8605s
+ === newton++ === : integrate part : 21.6006s
+ === newton++ === : sensei upd : 30.3438s
+ === newton++ === : === loop iteration === : 51.9445s
+ === newton++ === : fin sensei : 0.000174s
+ === newton++ === : total time : 577.527s
+
+real	9m45.190s
+user	0m0.056s
+sys	0m0.082s
++ echo '**********************************************************************************'
+**********************************************************************************
++ sensei_xml=data_binning_sync_1dev.xml
++ rank_per_dev=1
+++ echo 4-1
+++ bc
++ sim_dev=3
+++ bc
+++ echo '128*3*1'
++ n=384
+++ bc
+++ echo '3*1'
++ tasks=3
++ srun -N 128 -G 512 -n 384 --tasks-per-node 3 ./newtonpp_nv_omp --n_bodies 24000000 --n_its 10 --out_int 0 --out_dir sim_out --sensei_xml data_binning_sync_1dev.xml --sensei_int 1 --part_int 1000000 --num_devs 3
+srun: Job 13121550 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=13121550.2
+ === newton++ === : generate 24000000 bodies total
+ === newton++ === : run for 10 iterations
+ === newton++ === : writing results every 0 iterations
+ === newton++ === : writing results at sim_out
+ === newton++ === : in-situ initialized with data_binning_sync_1dev.xml
+ === newton++ === : in-situ processing every 1 iterations
+ === newton++ === : partition particles every 1000000 iterations
+ === newton++ === : 3 devices in use per node
+ === newton++ === : initialized 24000000 bodies on 384 patches. nfr=4.09207e+13
+ === newton++ === : read ic : 1.10326s
+ === newton++ === : initialized the in-situ backend
+ === newton++ === : sensei init : 0.002999s
+ === newton++ === : build tree : 1.96328s
+ === newton++ === : init forces : 35.1473s
+ === newton++ === : sensei upd : 40.5728s
+ === newton++ === : === initialization === : 79.7747s
+ === newton++ === : integrate part : 35.2167s
+ === newton++ === : sensei upd : 37.0174s
+ === newton++ === : === loop iteration === : 72.2342s
+ === newton++ === : integrate part : 35.2042s
+ === newton++ === : sensei upd : 37.0359s
+ === newton++ === : === loop iteration === : 72.2401s
+ === newton++ === : integrate part : 35.291s
+ === newton++ === : sensei upd : 36.9729s
+ === newton++ === : === loop iteration === : 72.264s
+ === newton++ === : integrate part : 35.22s
+ === newton++ === : sensei upd : 37.1218s
+ === newton++ === : === loop iteration === : 72.3419s
+ === newton++ === : integrate part : 35.1391s
+ === newton++ === : sensei upd : 37.3058s
+ === newton++ === : === loop iteration === : 72.4449s
+ === newton++ === : integrate part : 35.1869s
+ === newton++ === : sensei upd : 37.1026s
+ === newton++ === : === loop iteration === : 72.2895s
+ === newton++ === : integrate part : 35.229s
+ === newton++ === : sensei upd : 37.1902s
+ === newton++ === : === loop iteration === : 72.4192s
+ === newton++ === : integrate part : 35.143s
+ === newton++ === : sensei upd : 37.2176s
+ === newton++ === : === loop iteration === : 72.3606s
+ === newton++ === : integrate part : 35.1768s
+ === newton++ === : sensei upd : 37.2919s
+ === newton++ === : === loop iteration === : 72.4687s
+ === newton++ === : integrate part : 35.2312s
+ === newton++ === : sensei upd : 37.1129s
+ === newton++ === : === loop iteration === : 72.3442s
+ === newton++ === : fin sensei : 0.000182s
+ === newton++ === : total time : 803.188s
+
+real	13m45.288s
+user	0m0.065s
+sys	0m0.060s
++ echo '**********************************************************************************'
+**********************************************************************************
++ sensei_xml=data_binning_sync_2dev.xml
++ rank_per_dev=1
+++ echo 4-2
+++ bc
++ sim_dev=2
+++ echo '128*2*1'
+++ bc
++ n=256
+++ bc
+++ echo '2*1'
++ tasks=2
++ srun -N 128 -G 512 -n 256 --tasks-per-node 2 ./newtonpp_nv_omp --n_bodies 24000000 --n_its 10 --out_int 0 --out_dir sim_out --sensei_xml data_binning_sync_2dev.xml --sensei_int 1 --part_int 1000000 --num_devs 2
+srun: Job 13121550 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=13121550.3
+ === newton++ === : generate 24000000 bodies total
+ === newton++ === : run for 10 iterations
+ === newton++ === : writing results every 0 iterations
+ === newton++ === : writing results at sim_out
+ === newton++ === : in-situ initialized with data_binning_sync_2dev.xml
+ === newton++ === : in-situ processing every 1 iterations
+ === newton++ === : partition particles every 1000000 iterations
+ === newton++ === : 2 devices in use per node
+ === newton++ === : initialized 24000000 bodies on 256 patches. nfr=4.09207e+13
+ === newton++ === : read ic : 0.808062s
+ === newton++ === : initialized the in-situ backend
+ === newton++ === : sensei init : 0.003094s
+ === newton++ === : build tree : 0.874477s
+ === newton++ === : init forces : 34.5661s
+ === newton++ === : sensei upd : 44.5578s
+ === newton++ === : === initialization === : 81.7166s
+ === newton++ === : integrate part : 34.5382s
+ === newton++ === : sensei upd : 43.595s
+ === newton++ === : === loop iteration === : 78.1333s
+ === newton++ === : integrate part : 34.5605s
+ === newton++ === : sensei upd : 43.4362s
+ === newton++ === : === loop iteration === : 77.9967s
+ === newton++ === : integrate part : 34.5575s
+ === newton++ === : sensei upd : 43.4412s
+ === newton++ === : === loop iteration === : 77.9988s
+ === newton++ === : integrate part : 34.5476s
+ === newton++ === : sensei upd : 43.4507s
+ === newton++ === : === loop iteration === : 77.9984s
+ === newton++ === : integrate part : 34.5721s
+ === newton++ === : sensei upd : 43.3679s
+ === newton++ === : === loop iteration === : 77.94s
+ === newton++ === : integrate part : 34.6289s
+ === newton++ === : sensei upd : 43.5355s
+ === newton++ === : === loop iteration === : 78.1645s
+ === newton++ === : integrate part : 34.5945s
+ === newton++ === : sensei upd : 43.3216s
+ === newton++ === : === loop iteration === : 77.9162s
+ === newton++ === : integrate part : 34.5738s
+ === newton++ === : sensei upd : 43.439s
+ === newton++ === : === loop iteration === : 78.0129s
+ === newton++ === : integrate part : 34.5907s
+ === newton++ === : sensei upd : 43.3316s
+ === newton++ === : === loop iteration === : 77.9223s
+ === newton++ === : integrate part : 34.5309s
+ === newton++ === : sensei upd : 43.4193s
+ === newton++ === : === loop iteration === : 77.9502s
+ === newton++ === : fin sensei : 0.000198s
+ === newton++ === : total time : 861.756s
+
+real	14m29.359s
+user	0m0.059s
+sys	0m0.041s
++ echo '**********************************************************************************'
+**********************************************************************************
++ echo '**********************************************************************************'
+**********************************************************************************
++ sensei_xml=data_binning_async_host.xml
++ rank_per_dev=1
+++ bc
+++ echo '512*1'
++ n=512
+++ echo '4*1'
+++ bc
++ tasks=4
++ sim_dev=4
++ srun -N 128 -G 512 -n 512 --tasks-per-node 4 ./newtonpp_nv_omp --n_bodies 24000000 --n_its 10 --out_int 0 --out_dir sim_out --sensei_xml data_binning_async_host.xml --sensei_int 1 --part_int 1000000 --num_devs 4
+srun: Job 13121550 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=13121550.4
+ === newton++ === : generate 24000000 bodies total
+ === newton++ === : run for 10 iterations
+ === newton++ === : writing results every 0 iterations
+ === newton++ === : writing results at sim_out
+ === newton++ === : in-situ initialized with data_binning_async_host.xml
+ === newton++ === : in-situ processing every 1 iterations
+ === newton++ === : partition particles every 1000000 iterations
+ === newton++ === : 4 devices in use per node
+ === newton++ === : initialized 24000000 bodies on 512 patches. nfr=4.09207e+13
+ === newton++ === : read ic : 1.48085s
+ === newton++ === : initialized the in-situ backend
+ === newton++ === : sensei init : 0.005894s
+ === newton++ === : build tree : 3.43937s
+ === newton++ === : init forces : 21.4668s
+ === newton++ === : sensei upd : 0.020089s
+ === newton++ === : === initialization === : 27.5118s
+ === newton++ === : integrate part : 29.942s
+ === newton++ === : sensei upd : 0.075745s
+ === newton++ === : === loop iteration === : 30.0178s
+ === newton++ === : integrate part : 28.8495s
+ === newton++ === : sensei upd : 0.066729s
+ === newton++ === : === loop iteration === : 28.9163s
+ === newton++ === : integrate part : 28.8664s
+ === newton++ === : sensei upd : 0.058192s
+ === newton++ === : === loop iteration === : 28.9246s
+ === newton++ === : integrate part : 28.8567s
+ === newton++ === : sensei upd : 0.049112s
+ === newton++ === : === loop iteration === : 28.9059s
+ === newton++ === : integrate part : 28.8852s
+ === newton++ === : sensei upd : 0.066702s
+ === newton++ === : === loop iteration === : 28.952s
+ === newton++ === : integrate part : 28.8629s
+ === newton++ === : sensei upd : 0.063977s
+ === newton++ === : === loop iteration === : 28.927s
+ === newton++ === : integrate part : 28.8984s
+ === newton++ === : sensei upd : 0.051667s
+ === newton++ === : === loop iteration === : 28.9501s
+ === newton++ === : integrate part : 28.9221s
+ === newton++ === : sensei upd : 0.048449s
+ === newton++ === : === loop iteration === : 28.9706s
+ === newton++ === : integrate part : 28.878s
+ === newton++ === : sensei upd : 0.049124s
+ === newton++ === : === loop iteration === : 28.9272s
+ === newton++ === : integrate part : 28.8726s
+ === newton++ === : sensei upd : 0.047094s
+ === newton++ === : === loop iteration === : 28.9198s
+ === newton++ === : fin sensei : 28.9224s
+ === newton++ === : total time : 346.902s
+
+real	6m53.338s
+user	0m0.052s
+sys	0m0.089s
++ echo '**********************************************************************************'
+**********************************************************************************
++ sensei_xml=data_binning_async_matched.xml
++ rank_per_dev=1
+++ echo '512*1'
+++ bc
++ n=512
+++ echo '4*1'
+++ bc
++ tasks=4
++ sim_dev=4
++ srun -N 128 -G 512 -n 512 --tasks-per-node 4 ./newtonpp_nv_omp --n_bodies 24000000 --n_its 10 --out_int 0 --out_dir sim_out --sensei_xml data_binning_async_matched.xml --sensei_int 1 --part_int 1000000 --num_devs 4
+srun: Job 13121550 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=13121550.5
+ === newton++ === : generate 24000000 bodies total
+ === newton++ === : run for 10 iterations
+ === newton++ === : writing results every 0 iterations
+ === newton++ === : writing results at sim_out
+ === newton++ === : in-situ initialized with data_binning_async_matched.xml
+ === newton++ === : in-situ processing every 1 iterations
+ === newton++ === : partition particles every 1000000 iterations
+ === newton++ === : 4 devices in use per node
+ === newton++ === : initialized 24000000 bodies on 512 patches. nfr=4.09207e+13
+ === newton++ === : read ic : 1.43077s
+ === newton++ === : initialized the in-situ backend
+ === newton++ === : sensei init : 0.005988s
+ === newton++ === : build tree : 3.49261s
+ === newton++ === : init forces : 21.4605s
+ === newton++ === : sensei upd : 0.013238s
+ === newton++ === : === initialization === : 27.5077s
+ === newton++ === : integrate part : 29.7761s
+ === newton++ === : sensei upd : 0.065749s
+ === newton++ === : === loop iteration === : 29.8419s
+ === newton++ === : integrate part : 28.9997s
+ === newton++ === : sensei upd : 0.079297s
+ === newton++ === : === loop iteration === : 29.079s
+ === newton++ === : integrate part : 29.0195s
+ === newton++ === : sensei upd : 0.093602s
+ === newton++ === : === loop iteration === : 29.1131s
+ === newton++ === : integrate part : 28.8857s
+ === newton++ === : sensei upd : 0.081554s
+ === newton++ === : === loop iteration === : 28.9673s
+ === newton++ === : integrate part : 28.933s
+ === newton++ === : sensei upd : 0.090461s
+ === newton++ === : === loop iteration === : 29.0235s
+ === newton++ === : integrate part : 28.8257s
+ === newton++ === : sensei upd : 0.088945s
+ === newton++ === : === loop iteration === : 28.9147s
+ === newton++ === : integrate part : 28.8347s
+ === newton++ === : sensei upd : 0.062848s
+ === newton++ === : === loop iteration === : 28.8976s
+ === newton++ === : integrate part : 28.9357s
+ === newton++ === : sensei upd : 0.057216s
+ === newton++ === : === loop iteration === : 28.993s
+ === newton++ === : integrate part : 28.8683s
+ === newton++ === : sensei upd : 0.082618s
+ === newton++ === : === loop iteration === : 28.951s
+ === newton++ === : integrate part : 28.9209s
+ === newton++ === : sensei upd : 0.084964s
+ === newton++ === : === loop iteration === : 29.0059s
+ === newton++ === : fin sensei : 29.0024s
+ === newton++ === : total time : 347.311s
+
+real	6m7.125s
+user	0m0.066s
+sys	0m0.074s
++ echo '**********************************************************************************'
+**********************************************************************************
++ sensei_xml=data_binning_async_1dev.xml
++ rank_per_dev=1
+++ echo 4-1
+++ bc
++ sim_dev=3
+++ bc
+++ echo '128*3*1'
++ n=384
+++ bc
+++ echo '3*1'
++ tasks=3
++ srun -N 128 -G 512 -n 384 --tasks-per-node 3 ./newtonpp_nv_omp --n_bodies 24000000 --n_its 10 --out_int 0 --out_dir sim_out --sensei_xml data_binning_async_1dev.xml --sensei_int 1 --part_int 1000000 --num_devs 3
+srun: Job 13121550 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=13121550.6
+ === newton++ === : generate 24000000 bodies total
+ === newton++ === : run for 10 iterations
+ === newton++ === : writing results every 0 iterations
+ === newton++ === : writing results at sim_out
+ === newton++ === : in-situ initialized with data_binning_async_1dev.xml
+ === newton++ === : in-situ processing every 1 iterations
+ === newton++ === : partition particles every 1000000 iterations
+ === newton++ === : 3 devices in use per node
+ === newton++ === : initialized 24000000 bodies on 384 patches. nfr=4.09207e+13
+ === newton++ === : read ic : 1.15238s
+ === newton++ === : initialized the in-situ backend
+ === newton++ === : sensei init : 0.00578s
+ === newton++ === : build tree : 1.90589s
+ === newton++ === : init forces : 35.0564s
+ === newton++ === : sensei upd : 0.234019s
+ === newton++ === : === initialization === : 39.3075s
+ === newton++ === : integrate part : 39.8642s
+ === newton++ === : sensei upd : 0.018817s
+ === newton++ === : === loop iteration === : 39.8831s
+ === newton++ === : integrate part : 39.1225s
+ === newton++ === : sensei upd : 0.021248s
+ === newton++ === : === loop iteration === : 39.1438s
+ === newton++ === : integrate part : 39.2581s
+ === newton++ === : sensei upd : 0.018486s
+ === newton++ === : === loop iteration === : 39.2766s
+ === newton++ === : integrate part : 39.143s
+ === newton++ === : sensei upd : 0.018677s
+ === newton++ === : === loop iteration === : 39.1617s
+ === newton++ === : integrate part : 39.1776s
+ === newton++ === : sensei upd : 0.01836s
+ === newton++ === : === loop iteration === : 39.196s
+ === newton++ === : integrate part : 39.1475s
+ === newton++ === : sensei upd : 0.018334s
+ === newton++ === : === loop iteration === : 39.1659s
+ === newton++ === : integrate part : 39.1875s
+ === newton++ === : sensei upd : 0.018191s
+ === newton++ === : === loop iteration === : 39.2057s
+ === newton++ === : integrate part : 39.144s
+ === newton++ === : sensei upd : 0.018598s
+ === newton++ === : === loop iteration === : 39.1626s
+ === newton++ === : integrate part : 39.1337s
+ === newton++ === : sensei upd : 0.018273s
+ === newton++ === : === loop iteration === : 39.152s
+ === newton++ === : integrate part : 39.2355s
+ === newton++ === : sensei upd : 0.018504s
+ === newton++ === : === loop iteration === : 39.254s
+ === newton++ === : fin sensei : 35.8474s
+ === newton++ === : total time : 467.769s
+
+real	8m8.629s
+user	0m0.076s
+sys	0m0.046s
++ echo '**********************************************************************************'
+**********************************************************************************
++ sensei_xml=data_binning_async_2dev.xml
++ rank_per_dev=1
+++ echo 4-2
+++ bc
++ sim_dev=2
+++ bc
+++ echo '128*2*1'
++ n=256
+++ echo '2*1'
+++ bc
++ tasks=2
++ srun -N 128 -G 512 -n 256 --tasks-per-node 2 ./newtonpp_nv_omp --n_bodies 24000000 --n_its 10 --out_int 0 --out_dir sim_out --sensei_xml data_binning_async_2dev.xml --sensei_int 1 --part_int 1000000 --num_devs 2
+srun: Job 13121550 step creation temporarily disabled, retrying (Requested nodes are busy)
+srun: Step created for StepId=13121550.7
+ === newton++ === : generate 24000000 bodies total
+ === newton++ === : run for 10 iterations
+ === newton++ === : writing results every 0 iterations
+ === newton++ === : writing results at sim_out
+ === newton++ === : in-situ initialized with data_binning_async_2dev.xml
+ === newton++ === : in-situ processing every 1 iterations
+ === newton++ === : partition particles every 1000000 iterations
+ === newton++ === : 2 devices in use per node
+ === newton++ === : initialized 24000000 bodies on 256 patches. nfr=4.09207e+13
+ === newton++ === : read ic : 0.826586s
+ === newton++ === : initialized the in-situ backend
+ === newton++ === : sensei init : 0.005225s
+ === newton++ === : build tree : 0.849549s
+ === newton++ === : init forces : 34.618s
+ === newton++ === : sensei upd : 0.331619s
+ === newton++ === : === initialization === : 37.5077s
+ === newton++ === : integrate part : 43.694s
+ === newton++ === : sensei upd : 0.018612s
+ === newton++ === : === loop iteration === : 43.7126s
+ === newton++ === : integrate part : 41.9594s
+ === newton++ === : sensei upd : 0.034477s
+ === newton++ === : === loop iteration === : 41.9939s
+ === newton++ === : integrate part : 41.9144s
+ === newton++ === : sensei upd : 0.019257s
+ === newton++ === : === loop iteration === : 41.9337s
+ === newton++ === : integrate part : 41.9314s
+ === newton++ === : sensei upd : 0.018668s
+ === newton++ === : === loop iteration === : 41.9501s
+ === newton++ === : integrate part : 42.0575s
+ === newton++ === : sensei upd : 0.018344s
+ === newton++ === : === loop iteration === : 42.0758s
+ === newton++ === : integrate part : 41.9398s
+ === newton++ === : sensei upd : 0.022783s
+ === newton++ === : === loop iteration === : 41.9626s
+ === newton++ === : integrate part : 41.9276s
+ === newton++ === : sensei upd : 0.018368s
+ === newton++ === : === loop iteration === : 41.946s
+ === newton++ === : integrate part : 41.8847s
+ === newton++ === : sensei upd : 0.018801s
+ === newton++ === : === loop iteration === : 41.9035s
+ === newton++ === : integrate part : 41.9432s
+ === newton++ === : sensei upd : 0.018363s
+ === newton++ === : === loop iteration === : 41.9615s
+ === newton++ === : integrate part : 41.8171s
+ === newton++ === : sensei upd : 0.018313s
+ === newton++ === : === loop iteration === : 41.8354s
+ === newton++ === : fin sensei : 41.8709s
+ === newton++ === : total time : 500.665s
+
+real	8m25.711s
+user	0m0.044s
+sys	0m0.058s
