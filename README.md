@@ -4,8 +4,8 @@ Find more information in the following dirctories.
 
 | Directory | Description |
 | --------- | ----------- |
-| software | scritps documenting the versions of software used |
-| environment | scripts documenting the requisite Perlmutter modules |
+| software | documenting the versions of software used |
+| environment | documenting the requisite Perlmutter modules |
 | build | scripts and makefiles used to configure and build SENSEI and newton++ |
 | sensei\_xml | SENSEI XML configurations used in the runs |
 | run | SLURM batch scripts used in the runs |
